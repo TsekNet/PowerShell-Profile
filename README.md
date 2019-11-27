@@ -22,7 +22,7 @@ PowerShell running in a non-admin window while working in `C:\Tmp`
 Run the following from an administrative PowerShell prompt:
 
 ```powershell
-Invoke-WebRequest https://git.io/psprofile -OutFile $profile; & $profile -Verbose
+Invoke-WebRequest https://git.io/tsekprofile -OutFile $profile; & $profile -Verbose
 ```
 
 **_NOTE:_** When running this for the first time, the startup may take a minute to install all the required modules & fonts.
