@@ -1,6 +1,6 @@
 ﻿<#
   .SYNOPSIS
-    @TsekNet PowerShell Profile.
+    TsekNet PowerShell Profile.
 
   .DESCRIPTION
     Personal heavily customized PowerShell profile. Feel free to use and distrubute as
