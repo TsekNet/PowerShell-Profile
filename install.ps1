@@ -20,7 +20,6 @@
     Overwrite the AllUsersAllHosts PowerShell Profile with data downloaded from the URL.
     .\install.ps1 -Scope 'AllUsersAllHosts' -URL 'http://example.com' -Force
 #>
-[CmdletBinding()]
 param(
     [ValidateSet('AllUsersAllHosts', 'AllUsersCurrentHost', 'CurrentUserAllHosts', 'CurrentUserCurrentHost')]
     [string]$Scope = "CurrentUserCurrentHost",
