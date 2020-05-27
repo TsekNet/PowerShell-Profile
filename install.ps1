@@ -1,19 +1,32 @@
-﻿###############################################################################
-# Install the TsekNet PowerShell profile from GitHub for the desired scope.
-#
-# By default, this will overwrite $PROFILE.CurrentUserCurrentHost.
-# See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles
-# for more information. around scopes
-###############################################################################
+﻿<#
+.Synopsis
+    Install the TsekNet PowerShell profile.
 
-$scope = 'CurrentUserCurrentHost'
+.DESCRIPTION
+    Install the TsekNet PowerShell profile from GitHub for the desired scope.
+    By default, the existing profile will not be overwritten.
 
-# Profile.ps1 URL.
-$url = 'https://git.io/tsekprofile'
+.Parameter Scope
+    Name of the PowerShell profile scope to use.
+    See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles for more information.
 
-$profile_dir = Split-Path $PROFILE.$scope
-$profile_file = $profile.$scope
-$request = Invoke-WebRequest $url -UseBasicParsing  -ContentType "text/plain; charset=utf-8"
+.Parameter URL
+    Fully qualified URL to the profile.ps1 file to download.
+
+.EXAMPLE
+    Overwrite the AllUsersAllHosts PowerShell Profile with data downloaded from the URL.
+    .\install.ps1 -Scope 'AllUsersAllHosts' -URL 'http://example.com'
+#>
+[CmdletBinding()]
+param(
+    [ValidateSet('AllUsersAllHosts', 'AllUsersCurrentHost', 'CurrentUserAllHosts', 'CurrentUserCurrentHost')]
+    [string]$Scope = "CurrentUserCurrentHost",
+    [Uri]$URL = 'https://github.com/TsekNet/PowerShell-Profile/raw/master/profile.ps1'
+)
+
+$profile_dir = Split-Path $PROFILE.$Scope
+$profile_file = $profile.$Scope
+$request = Invoke-WebRequest $URL -UseBasicParsing  -ContentType "text/plain; charset=utf-8"
 
 if (-not (Test-Path $profile_dir)) {
     New-Item -Path $profile_dir -ItemType Directory | Out-Null
@@ -21,6 +34,6 @@ if (-not (Test-Path $profile_dir)) {
 }
 
 # Leverage IO.File for PowerShell 5 comppatability.
-[System.IO.File]::WriteAllLines($profile_file, $request.Content)
-Write-Verbose "Wrote profile file: $profile_file with content from: $url"
+[IO.File]::WriteAllLines($profile_file, $request.Content)
+Write-Verbose "Wrote profile file: $profile_file with content from: $URL"
 & $profile_file -Verbose
