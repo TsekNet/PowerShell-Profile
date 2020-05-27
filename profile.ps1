@@ -275,7 +275,7 @@ try {
 
   Write-Verbose '==Getting latest profile files from GitHub=='
   Import-GitRepo -Owner tseknet -Repository PowerShell-Profile -FilePath `
-    'Microsoft.PowerShell_profile.ps1',
+    'profile.ps1',
   'Themes/TsekNet.psm1' -ThemeName 'TsekNet'
 
   Write-Verbose '==Importing modules required for profile=='
