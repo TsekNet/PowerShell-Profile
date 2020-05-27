@@ -64,18 +64,6 @@ function Write-Theme {
   $prompt += Write-Prompt -Object " $($MyInvocation.HistoryId) " -ForegroundColor $sl.Colors.DarkGray -BackgroundColor $sl.Colors.Cyan
   $prompt += Write-Prompt -Object $($sl.PromptSymbols.SegmentForwardSymbol) -ForegroundColor $sl.Colors.Cyan -BackgroundColor $sl.Colors.Gray
 
-  # Replace Slash in directory with desired character (>)
-  ## THIS IS THE  PROBLEMM???
-
-
-
-
-
-
-
-
-
-
   $fullPath = $pwd.Path.Replace("$($env:SystemDrive)\", '').Replace('\', ' ' + $sl.PromptSymbols.ForwardHollowArrow + ' ')
 
   if (Test-VirtualEnv) {
