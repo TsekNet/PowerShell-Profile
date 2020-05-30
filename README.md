@@ -22,7 +22,7 @@ PowerShell running in a non-admin window while working in `C:\Tmp`
 Run the following from an administrative PowerShell prompt:
 
 ```powershell
-iex ((New-Object Net.WebClient).DownloadString('https://github.com/tseknet/Powershell-Profile/raw/master/install.ps1'))
+iwr 'https://github.com/tseknet/Powershell-Profile/raw/master/install.ps1' -useb | iex
 ```
 
 **_NOTE:_** When running this for the first time, the startup may take a minute to install all the required modules & fonts.
