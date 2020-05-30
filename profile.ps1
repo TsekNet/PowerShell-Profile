@@ -3,19 +3,17 @@
     TsekNet PowerShell Profile.
 
   .DESCRIPTION
-    Personal heavily customized PowerShell profile. Feel free to use and distrubute as
-    you see fit. Expect frequent updates. Please file PRs for any errors/improvements.
+    Personal heavily customized PowerShell profile. Feel free to use and
+    distrubute as you see fit. Expect frequent updates. Please file PRs for any
+    errors/improvements.
 
     To use this profile, simply place this file in any of your $profile
-    directories and restart your PowerShell console
-    (Ex: $profile)
+    directories and restart your PowerShell console (Ex: $profile)
 
     Execution of functions can be found a the bottom of this profile script.
 
   .LINK
-    TsekNet.com
-    GitHub.com/TsekNet
-    Twitter.com/TsekNet
+    TsekNet.com GitHub.com/TsekNet Twitter.com/TsekNet
 #>
 [CmdletBinding()]
 param ()
@@ -53,7 +51,7 @@ function Import-MyModules {
       Continue
     }
     try {
-      Write-Verbose "Attemping to install module '$Module"
+      Write-Verbose "Attemping to install module '$Module'"
       Import-Module -Name $Module -ErrorAction Stop -Verbose:$false
     }
     catch {
@@ -105,8 +103,10 @@ function Import-GitRepo {
   .Synopsis
     This function will download a Github Repository without using Git
   .DESCRIPTION
-    This function will download files from Github without using Git.  You will need to know the Owner, Repository name, branch (default master),
-    and FilePath.  The Filepath will include any folders and files that you want to download.
+    This function will download files from Github without using Git.  You will
+    need to know the Owner, Repository name, branch (default master), and
+    FilePath.  The Filepath will include any folders and files that you want to
+    download.
   .EXAMPLE
     Import-GitRepo -Owner MSAdministrator -Repository WriteLogEntry -Verbose -FilePath `
         'WriteLogEntry.psm1',
@@ -211,10 +211,10 @@ Write-Verbose "==Setting command aliases=="
 
 # Copy the last command entered
 function Copy-LastCommand {
-  Get-History -id $(((Get-History) | Select-Object -Last 1 |
-      Select-Object ID -ExpandProperty ID)) |
-  Select-Object -ExpandProperty CommandLine |
-  clip
+  Get-History -Id $(((Get-History) | Select-Object -Last 1 |
+        Select-Object ID -ExpandProperty ID)) |
+      Select-Object -ExpandProperty CommandLine |
+        clip
 }
 
 # Make it easy to edit this profile once it's installed
@@ -289,6 +289,7 @@ try {
   Get-Elevation
 
   Write-Verbose '==Setting the console title=='
+  $ThemeSettings.Options.ConsoleTitle = $false
   Set-WindowTitle
 
   Write-Verbose '==Setting the default directory for new PowerShell consoles=='
