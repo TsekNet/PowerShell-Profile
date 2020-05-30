@@ -1,11 +1,28 @@
-﻿################################################################################
-# Install the TsekNet PowerShell profile from GitHub for the desired scope.    #
-################################################################################
+﻿<#
+.Synopsis
+    Install the TsekNet PowerShell profile.
 
-# One of AllUsersAllHosts, AllUsersCurrentHost, CurrentUserAllHost, CurrentUserCurrentHost
-$Scope = "CurrentUserCurrentHost"
-$URL = 'https://github.com/TsekNet/PowerShell-Profile/raw/master/profile.ps1'
+.DESCRIPTION
+    Install the TsekNet PowerShell profile from GitHub for the desired scope.
+    By default, the existing profile will not be overwritten.
 
+.Parameter Scope
+    Name of the PowerShell profile scope to use.
+    See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles for more information.
+
+.Parameter URL
+    Fully qualified URL to the profile.ps1 file to download.
+
+.EXAMPLE
+    Overwrite the AllUsersAllHosts PowerShell Profile with data downloaded from the URL.
+    .\install.ps1 -Scope 'AllUsersAllHosts' -URL 'http://example.com'
+#>
+[CmdletBinding()]
+param(
+  [ValidateSet('AllUsersAllHosts', 'AllUsersCurrentHost', 'CurrentUserAllHosts', 'CurrentUserCurrentHost')]
+  [string]$Scope = "CurrentUserCurrentHost",
+  [Uri]$URL = 'https://github.com/TsekNet/PowerShell-Profile/raw/master/profile.ps1'
+)
 
 $profile_dir = Split-Path $PROFILE.$Scope
 $profile_file = $profile.$Scope
