@@ -289,7 +289,7 @@ try {
   Get-Elevation
 
   Write-Verbose '==Setting the console title=='
-  $ThemeSettings.Options.ConsoleTitle = $false
+  if ($ThemeSettings.Options) { $ThemeSettings.Options.ConsoleTitle = $false }
   Set-WindowTitle
 
   Write-Verbose '==Setting the default directory for new PowerShell consoles=='
