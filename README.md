@@ -2,9 +2,6 @@
 
 My personal, heavily customized PowerShell profile.
 
-To use this profile, place this file in your `$profile`
-directory and restart your PowerShell console.
-
 ## Screenshots
 
 PowerShell running in an administrative window while working on a git repo
