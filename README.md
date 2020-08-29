@@ -26,22 +26,25 @@ iex ((New-Object Net.WebClient).DownloadString('https://github.com/tseknet/Power
 
 ### Imported Modules
 
-The following modules will be installed by default:
+I can't take all the credit. The following (awesome) modules will be installed
+by default:
 
-```powershell {.good}
-posh-git
-oh-my-posh
-Get-ChildItemColor
-```
+1. [posh-git](https://github.com/dahlbyk/posh-git)
+1. [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+1. [Get-ChildItemColor](https://github.com/joonro/Get-ChildItemColor)
 
-## What's included
+## Custom Functions
+Here's a high-level summary of some functions that my profile script provides:
 
-1. Set the PowerShell Window Title with useful information such as elevation and version.
-2. Install/Import modules listed above.
-3. Overwrite `ll` / `ls` / `history` commands for better results.
-4. Download/Set personal theme [TsekNet.psm1](Themes/TsekNet.psm1).
-5. Install Powerline fonts (https://github.com/PowerLine/fonts) using `posh-git`.
-6. Set default path.
+1. Set the PowerShell Window Title with useful information such as elevation and version
+1. Install/Import modules listed above
+1. Overwrite `ll` / `ls` / `history` commands for better results
+1. Download and set my personal `oh-my-posh` theme module, [TsekNet.psm1](https://github.com/TsekNet/PowerShell-Profile/blob/master/Themes/TsekNet.psm1)
+1. Install [Powerline]((https://github.com/PowerLine/fonts) fonts using `posh-git`
+1. Set the default location
+1. Output functions made by the profile to the console
+
+    ...and much more!
 
 ## Troubleshooting
 
