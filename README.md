@@ -40,7 +40,7 @@ Here's a high-level summary of some functions that my profile script provides:
 1. Install/Import modules listed above
 1. Overwrite `ll` / `ls` / `history` commands for better results
 1. Download and set my personal `oh-my-posh` theme module, [TsekNet.psm1](https://github.com/TsekNet/PowerShell-Profile/blob/master/Themes/TsekNet.psm1)
-1. Install [Powerline]((https://github.com/PowerLine/fonts) fonts using `posh-git`
+1. Install [Powerline](https://github.com/PowerLine/fonts) fonts using `posh-git`
 1. Set the default location
 1. Output functions made by the profile to the console
 
