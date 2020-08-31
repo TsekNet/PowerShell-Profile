@@ -119,7 +119,7 @@ function Write-Theme {
     $prompt += Write-Prompt -Object "$($with.ToUpper()) " -BackgroundColor $sl.Colors.Magenta -ForegroundColor $sl.Colors.DarkRed
   }
 
-  $prompt += Write-Prompt -Object " $($sl.PromptSymbols.HomeSymbol) " -ForegroundColor $sl.Colors.Red -BackgroundColor $sl.Colors.Gray
+  $prompt += Write-Prompt -Object " $($sl.PromptSymbols.LightningSymbol) " -ForegroundColor $sl.Colors.Red -BackgroundColor $sl.Colors.Gray
   $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.Gray
   $prompt += ' '
   $prompt
@@ -143,6 +143,6 @@ $sl.PromptSymbols.ForwardHollowArrow = [char]::ConvertFromUtf32(0xE0B1)
 $sl.PromptSymbols.PromptIndicator = [char]::ConvertFromUtf32(0x276F)
 $sl.PromptSymbols.SegmentBackwardSymbol = [char]::ConvertFromUtf32(0xE0B2)
 $sl.PromptSymbols.SegmentForwardSymbol = [char]::ConvertFromUtf32(0xE0B0)
-$sl.PromptSymbols.HomeSymbol = [char]::ConvertFromUtf32(0x1F3E0)
+$sl.PromptSymbols.LightningSymbol = [char]::ConvertFromUtf32(0x26a1)
 $sl.PromptSymbols.WarningSymbol = [char]::ConvertFromUtf32(0x203C)
 $sl.PromptSymbols.StartSymbol = ''
