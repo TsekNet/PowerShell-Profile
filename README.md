@@ -1,5 +1,7 @@
 # My PowerShell Profile
 
+🚨 This repository is no longer maintained. See [github.com/tseknet/dotfiles](https://github.com/tseknet/dotfiles) for my latest PowerShell profile.
+
 My PowerShell profile is a collection of functions that add neat shortcuts and
 functionality to all of my PowerShell consoles by default.
 
